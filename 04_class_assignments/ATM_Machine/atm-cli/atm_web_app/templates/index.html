@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ATM Machine</title>
+    <style>
+        body { font-family: Arial; padding: 90px; background: #f4f4f4; }
+        .atm-box { background: white; padding: 20px; max-width: 400px; margin: auto; border-radius: 10px; box-shadow: 0 0 10px #aaa; }
+        input, button { padding: 10px; margin: 5px 0; width: 95%; }
+    </style>
+</head>
+<body>
+    <div class="atm-box">
+        <h2>🔐 ATM Web Interface</h2>
+        <form method="POST">
+            <label>PIN:</label>
+            <input type="password" name="pin" required><br>
+            <label>Amount:</label>
+            <input type="number" name="amount" step="0.01"><br>
+            <button type="submit" name="action" value="deposit">💰 Deposit</button>
+            <button type="submit" name="action" value="withdraw">🏧 Withdraw</button>
+        </form>
+        <hr>
+        {% if message %}<p>{{ message }}</p>{% endif %}
+        {% if balance is not none %}<p>💸 Current Balance: Rs. {{ balance }}</p>{% endif %}
+    </div>
+</body>
+</html>
